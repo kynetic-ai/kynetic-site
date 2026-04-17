@@ -1,11 +1,16 @@
 # Site settings
-title: Kynetic
+title: kynetic intelligence
 email: hello@kynetic.ai
-description: "Kynetic Intelligence builds Physical AI — the brain for intelligent robots. One brain, any robot."
+description: "One brain. Any robot."
 baseurl: ""
 url: "https://kynetic.ai"
-twitter_username: kynetic_ai
 github_username: kynetic-ai
+linkedin_username: kynetic-intelligence
+
+# Navigation
+header_pages:
+  - blog.md
+  - about.markdown
 
 # Build settings
 theme: minima
