@@ -11,21 +11,21 @@ Not better robots. Not purpose-built humanoids. The intelligence layer that make
 
 ## Why Now
 
-AI has conquered simulation. Transformers run everywhere. But the real world is different — it's messy, unpredictable, and unforgiving of errors.
+AI has conquered simulation. Foundation models run everywhere. But the real world is different — it's messy, unpredictable, and unforgiving of errors.
 
-The gap between what's possible in simulation and what's deployed in the physical world is enormous. Most "AI robots" today are:
+The gap between what's possible in simulation and what's deployed in the physical world is enormous. Most robots today are:
 - Script-followers, not reasoners
-- Cloud-dependent, not edge-capable
+- Cloud-dependent, unable to act autonomously
 - Narrow specialists, not generalists
 
 ## What We're Building
 
-ASE (Action Space Encoding) is our core technical approach:
+Our Physical AI brain:
 
 1. **Pre-training** — Build world models from massive demonstration data
-2. **Skill encoder** — Compact latent representations of behaviors  
-3. **VLA tokens** — Real-time reasoning from vision to action
-4. **Edge deployment** — Runs on any robot hardware
+2. **Skill learning** — Compact latent representations of behaviors  
+3. **Real-time reasoning** — From perception to action, on-device
+4. **Local deployment** — Runs on any robot hardware, no cloud required
 
 The result: *One brain, any robot.*
 
