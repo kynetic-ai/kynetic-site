@@ -2,7 +2,6 @@
 layout: home
 ---
 
-## One brain. Any robot.
 
 Kynetic Intelligence builds robot learning systems — a single trained intelligence that can operate across different robot embodiments.
 
