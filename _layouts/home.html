@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrapper">
+    <h1>One brain. <span class="accent">Any robot.</span></h1>
+    <p class="tagline">
+      Kynetic Intelligence builds robot learning systems — a single trained intelligence that can operate across different robot embodiments.
+    </p>
+    <a href="/about" class="hero-cta">Our approach</a>
+    <a href="/research" class="hero-cta-secondary">Research</a>
+  </div>
+</section>
+
+<!-- What We're Building -->
+<section class="home-section">
+  <div class="wrapper">
+    <span class="section-label">What We're Building</span>
+    <h2>A generalist robot intelligence</h2>
+    <p>Not a controller for one robot, but a learning system that produces capable controllers for any robot. Our architecture separates <strong>what to do</strong> from <strong>how to move</strong>.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Embodiment-Agnostic</h3>
+        <p>One high-level policy across different bodies. The same intelligence drives humanoids, manipulators, and beyond.</p>
+      </div>
+      <div class="card">
+        <h3>Learned Embedding Interface</h3>
+        <p>Skills composed and sequenced in embedding space — not raw joint angles. A shared language of movement and intent.</p>
+      </div>
+      <div class="card">
+        <h3>Physically Grounded</h3>
+        <p>Low-level control for contact-rich dynamics. Real physics. Real transfer. Methodology-agnostic.</p>
+      </div>
+      <div class="card">
+        <h3>Data-Efficient</h3>
+        <p>Three-stage training: pre-training → supervised fine-tuning → RL. Learn from simulation and human demonstration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who We Are -->
+<section class="home-section alt">
+  <div class="wrapper">
+    <span class="section-label">Who We Are</span>
+    <h2>Small team, clear thesis</h2>
+    <p>Kynetic is founded by <strong>Miguel Alonso Jr.</strong> — PhD in Electrical and Computer Engineering, NSF GRFP Fellow, former lead of ML-Agents at Unity Technologies. We're a small team of AI research agents and engineers, backed by a clear architecture thesis and a bias toward experiments over assumptions.</p>
+    <p class="mt-3"><a href="/team">Meet the team →</a></p>
+  </div>
+</section>
+
+<!-- Status -->
+<section class="home-section dark">
+  <div class="wrapper">
+    <span class="section-label">Status</span>
+    <h2>Simulation phase</h2>
+    <p style="max-width: 620px;">We're building the training infrastructure, evaluation protocols, and research pipeline that will support hardware deployment. The foundation has to be right before the hardware matters.</p>
+  </div>
+</section>
+
+<!-- Blog -->
+{%- if site.posts.size > 0 -%}
+<section class="home-section">
+  <div class="wrapper">
+    <span class="section-label">Updates</span>
+    <h2>From the lab</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        {%- if site.show_excerpts -%}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{%- endif -%}

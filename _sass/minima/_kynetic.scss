@@ -1,0 +1,416 @@
+// ============================================
+// Kynetic Visual Identity
+// Orange accent + clean minimalism
+// ============================================
+
+// --- Root & Body ---
+body {
+  font-weight: 300;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: #0A0A0A;
+}
+
+h1 { font-size: 2.4rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.8rem; letter-spacing: -0.01em; }
+h3 { font-size: 1.3rem; }
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $brand-color-dark;
+    text-decoration: none;
+  }
+}
+
+// --- Site Header ---
+.site-header {
+  border-top: 3px solid $brand-color;
+  border-bottom: 1px solid $grey-color-light;
+  min-height: 60px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  padding-top: 3px; // optical centering for the logo within the 60px header bar
+
+  img {
+    display: block;
+    height: 36px;
+    width: auto;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+.site-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  color: #0A0A0A !important;
+
+  &:hover {
+    color: $brand-color !important;
+  }
+}
+
+.site-nav .page-link {
+  color: $grey-color-dark;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-left: 24px;
+  position: relative;
+
+  &:hover {
+    color: $brand-color;
+  }
+
+  // Active page indicator
+  &.active {
+    color: $brand-color;
+    font-weight: 500;
+  }
+}
+
+// --- Hero section (home page) ---
+.hero {
+  background: linear-gradient(160deg, #0A0A0A 0%, #1A1A1A 60%, #2D1600 100%);
+  color: #fff;
+  padding: 90px 0 80px;
+  margin-top: -1px; // overlap with header border
+
+  .wrapper {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 0 $spacing-unit;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.4em;
+    line-height: 1.15;
+
+    .accent {
+      color: $brand-color;
+    }
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 620px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: $brand-color;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+    margin-right: 12px;
+
+    &:hover {
+      background: $brand-color-dark;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .hero-cta-secondary {
+    display: inline-block;
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  @include media-query($on-palm) {
+    padding: 50px 0 45px;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+    }
+  }
+}
+
+// --- Page content ---
+.page-content {
+  padding: $spacing-unit * 2 0;
+  flex: 1;
+}
+
+.post-content, .page-content .wrapper > article {
+  h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid $grey-color-light;
+  }
+
+  h3 {
+    margin-top: 2rem;
+  }
+
+  p, li {
+    line-height: 1.75;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #0A0A0A;
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// --- Home page sections ---
+.home-section {
+  padding: 64px 0;
+
+  &.alt {
+    background: #fff;
+    border-top: 1px solid $grey-color-light;
+    border-bottom: 1px solid $grey-color-light;
+  }
+
+  &.dark {
+    background: #0A0A0A;
+    color: #fff;
+
+    h2, h3 { color: #fff; }
+    p { color: rgba(255,255,255,0.7); }
+    strong { color: #fff; }
+
+    a {
+      color: $brand-color;
+      &:hover { color: lighten($brand-color, 10%); }
+    }
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $brand-color;
+    margin-bottom: 0.75rem;
+    background: rgba($brand-color, 0.08);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+}
+
+// --- Cards ---
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid $grey-color-light;
+  border-radius: 10px;
+  padding: 28px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $grey-color;
+    line-height: 1.6;
+  }
+}
+
+// --- Team page ---
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.team-member {
+  text-align: center;
+
+  .headshot {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: $grey-color-light;
+    margin: 0 auto 16px;
+    display: block;
+    border: 3px solid $brand-color;
+  }
+
+  .name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .role {
+    font-size: 0.85rem;
+    color: $brand-color;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .bio {
+    font-size: 0.85rem;
+    color: $grey-color;
+    line-height: 1.6;
+  }
+}
+
+// --- Blog posts ---
+.post-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $grey-color-light;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: $grey-color;
+  margin-bottom: 6px;
+}
+
+.post-link {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.post-excerpt {
+  font-size: 0.95rem;
+  color: $grey-color-dark;
+  line-height: 1.7;
+}
+
+// --- Footer ---
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  background: #fff;
+  padding: 40px 0;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0A0A0A;
+  margin-bottom: 12px;
+}
+
+.footer-col-wrapper {
+  font-size: 0.85rem;
+  color: $grey-color;
+}
+
+.contact-list, .social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+// --- Utility ---
+.text-center { text-align: center; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+// --- Responsive ---
+@include media-query($on-palm) {
+  .hero {
+    h1 { font-size: 2rem; }
+    .tagline { font-size: 1rem; }
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+.site-nav {
+  margin-left: auto;
+}
