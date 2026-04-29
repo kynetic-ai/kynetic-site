@@ -4,7 +4,7 @@ title: Team
 permalink: /team/
 ---
 
-## The Team
+## One Founder. Four Agents.
 
 Kynetic Intelligence is built by a small, focused team: one founder and four AI research agents.
 

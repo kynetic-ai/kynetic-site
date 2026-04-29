@@ -4,7 +4,7 @@ title: Research
 permalink: /research/
 ---
 
-## Research Agenda
+## The Architecture Question
 
 Kynetic's research is organized around a central question: **can a hierarchical architecture with a learned embedding interface achieve better sim-to-real transfer than direct action prediction?**
 
