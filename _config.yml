@@ -6,6 +6,7 @@ baseurl: ""
 url: "https://kynetic.ai"
 github_username: kynetic-ai
 theme: minima
+show_excerpts: true
 header_pages:
   - about.markdown
   - research.markdown
