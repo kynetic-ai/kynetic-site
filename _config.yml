@@ -12,4 +12,6 @@ header_pages:
   - research.markdown
   - team.markdown
 plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-feed
