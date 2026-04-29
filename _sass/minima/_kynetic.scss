@@ -46,24 +46,29 @@ a {
   background: rgba(255, 255, 255, 0.95);
 }
 
+.site-logo {
+  display: flex;
+  align-items: center;
+  float: left;
+  line-height: 60px;
+
+  img {
+    display: block;
+    height: 36px;
+    width: auto;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+/* Keep .site-title for any residual use, but remove pseudo-element */
 .site-title {
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: -0.01em;
   color: #0A0A0A !important;
-
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: $brand-color;
-    border-radius: 2px;
-    margin-right: 10px;
-    vertical-align: middle;
-    position: relative;
-    top: -2px;
-  }
 
   &:hover {
     color: $brand-color !important;
