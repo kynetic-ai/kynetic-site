@@ -44,13 +44,17 @@ a {
   z-index: 100;
   backdrop-filter: blur(8px);
   background: rgba(255, 255, 255, 0.95);
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .site-logo {
   display: flex;
   align-items: center;
-  float: left;
-  line-height: 60px;
+  padding-top: 3px; // optical centering for the logo within the 60px header bar
 
   img {
     display: block;
@@ -62,8 +66,6 @@ a {
     opacity: 0.85;
   }
 }
-
-/* Keep .site-title for any residual use, but remove pseudo-element */
 .site-title {
   font-weight: 700;
   font-size: 1.25rem;
@@ -407,4 +409,8 @@ a {
   .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
+}
+
+.site-nav {
+  margin-left: auto;
 }
