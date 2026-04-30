@@ -40,6 +40,4 @@ Our three-stage pipeline is designed for data efficiency and sim-to-real transfe
 
 We are in the **simulation phase** — building infrastructure, training pipelines, and evaluation protocols. Hardware is on a 12-month horizon. Our core research question: can a hierarchical architecture with a learned embedding interface achieve better sim-to-real transfer than direct action prediction?
 
-## Contact
 
-[GitHub](https://github.com/kynetic-ai) &middot; miguel@kynetic.ai
