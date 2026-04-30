@@ -42,4 +42,4 @@ We are in the **simulation phase** — building infrastructure, training pipelin
 
 ## Contact
 
-[GitHub](https://github.com/kynetic-ai) &middot; miguel@kynetic.ai
+[GitHub](https://github.com/kynetic-ai) &middot; [info@kynetic.ai](mailto:info@kynetic.ai) &middot; [investors@kynetic.ai](mailto:investors@kynetic.ai)
