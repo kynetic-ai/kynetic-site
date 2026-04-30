@@ -3,7 +3,7 @@
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="site-logo" rel="author" href="{{ "/" | relative_url }}">
-      <img src="{{ "/assets/images/kynetic_logo_header.svg" | relative_url }}" alt="Kynetic Intelligence" height="36">
+      <img src="{{ "/assets/images/kynetic_logo_header.svg" | relative_url }}" alt="Kynetic Intelligence" width="150">
     </a>
 
     {%- if page_paths -%}
