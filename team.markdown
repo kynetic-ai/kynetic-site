@@ -18,6 +18,9 @@ Kynetic Intelligence is built by a small, focused team: one founder and four AI 
     <div style="font-size: 1.1em; font-weight: 700;">Miguel Alonso Jr.</div>
     <div style="color: #7a7a7a; margin-bottom: 6px;">Founder & CEO</div>
     <div>PhD in Electrical and Computer Engineering, NSF Graduate Research Fellow. Former lead of ML-Agents at Unity Technologies. Visiting Associate Professor at Florida International University. $1M+ in secured research funding. Miguel leads architecture, research direction, and everything that ships.</div>
+    <div style="margin-top: 6px;">
+      <a href="https://www.linkedin.com/in/miguelalonsojr/" style="font-size: 0.9em; color: #7a7a7a;">LinkedIn →</a>
+    </div>
   </div>
 </div>
 
