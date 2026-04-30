@@ -19,7 +19,9 @@ Robot control decomposes naturally into two levels:
 
 **Low-level:** How should the robot move? Joint torques, contact forces, impedance parameters, end-effector trajectories. This is about physics, embodiment geometry, and real-time control.
 
-The question isn't *whether* to separate these levels. Most serious efforts do, in some form. The question is: **what passes between them?**
+The question isn't *whether* to separate these levels. Most serious efforts do, in some form. The question is: **what passes between them — and how does it get there?**
+
+In our architecture, the answer has three pieces: a VLA that produces intent, a learned mapping that translates intent into skill embeddings, and a low-level controller that decodes those embeddings into action. The key insight lives in the middle — the embedding space itself.
 
 ## The Direct Approach
 
@@ -31,11 +33,11 @@ This works. It's the straightforward way to chain two policies. But it's also a 
 
 We take a different bet.
 
-Instead of passing explicit commands between levels, we pass through a learned embedding space — a compressed, structured representation of *what movement means* rather than *how to execute it*. The high-level policy outputs an embedding. The low-level policy — embodiment-specific, trained per platform — decodes that embedding into control.
+Instead of passing explicit commands between levels, we pass through a learned embedding space — a compressed, structured representation of *how to move* rather than *where to move*. The high-level policy (a VLA) produces task-goal intent. That intent maps through to a skill embedding — a point in a shared latent space that captures motor-primitive structure. The low-level controller — embodiment-specific, trained per platform — decodes that embedding into control.
 
 This sounds abstract. Here's what it means in practice:
 
-The same embedding that means "reach toward object" compiles to different joint trajectories on a humanoid arm versus a 7-DOF manipulator versus a wheeled base with a gripper. The embedding captures the *intent* of the movement. Each low-level controller knows how to realize that intent on its hardware.
+The same embedding that corresponds to "reach toward object" compiles to different joint trajectories on a humanoid arm versus a 7-DOF manipulator versus a wheeled base with a gripper. Intent comes from the VLA — the embedding translates it into movement structure. Each low-level controller knows how to realize that structure on its hardware.
 
 ## Why This Matters
 
@@ -43,7 +45,7 @@ Three reasons:
 
 **1. Composition.** Embeddings compose. If you have an embedding for "reach" and an embedding for "grasp" and an embedding for "lift," you can sequence them — or even blend them — in embedding space. The interface becomes a language for movement primitives, not a command protocol.
 
-**2. Transfer.** A high-level policy trained on manipulation data produces embeddings that are meaningful for navigation, because the embedding space captures intent, not joint configurations. You don't need to retrain the high-level policy every time you add a new robot — you train a new low-level decoder.
+**2. Transfer.** A high-level policy trained on manipulation data produces embeddings that are meaningful for navigation, because the embedding space captures movement structure, not joint configurations. You don't need to retrain the high-level policy every time you add a new robot — you train a new low-level decoder.
 
 **3. Data efficiency.** If the embedding space is well-structured, the high-level policy can learn from diverse embodiment data without the low-level control details interfering. The embedding acts as a bottleneck that forces the policy to represent *what matters* rather than *how to execute*.
 
@@ -51,7 +53,7 @@ Three reasons:
 
 This is not a solved problem. Three things keep me up:
 
-**Learning the embedding space.** You can't hand-design an embedding that captures movement intent across embodiments. It has to be learned. And learning a good one requires training across diverse robots simultaneously — if you train sequentially, the embedding space drifts.
+**Learning the embedding space.** You can't hand-design an embedding that captures movement structure across embodiments. It has to be learned. And learning a good one requires training across diverse robots simultaneously — if you train sequentially, the embedding space drifts.
 
 **The sim-to-real gap for embeddings.** It's one thing to get this working in simulation, where you have perfect state and infinite data. It's another to deploy on real hardware where sensor noise, actuator latency, and unmodeled dynamics mean the embedding must be robust to distribution shift.
 
