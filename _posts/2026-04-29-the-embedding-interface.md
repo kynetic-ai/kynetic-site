@@ -25,7 +25,7 @@ In our architecture, the answer has three pieces: a VLA that produces intent, a 
 
 ## The Direct Approach
 
-Skild AI has built an impressive system — $1.8 billion in funding, a team out of CMU, and a hierarchical architecture they call the Skild Brain. Their high-level policy passes commands directly to the low-level policy. "Move the end effector to position X with stiffness Y." Concrete, explicit, interpretable.
+Several well-funded efforts take a more direct path. Their high-level policy passes explicit commands to the low-level policy. "Move the end effector to position X with stiffness Y." Concrete, explicit, interpretable.
 
 This works. It's the straightforward way to chain two policies. But it's also a tight coupling: every new embodiment needs the high-level policy to understand its specific control interface. The abstraction leaks.
 
@@ -61,7 +61,7 @@ This is not a solved problem. Three things keep me up:
 
 ## The State of Play
 
-The robot learning field is moving fast. Physical Intelligence has shown remarkable results with π₀, their VLA model. Skild has the scale and the team. Figure is shipping humanoids.
+The robot learning field is moving fast. VLAs are getting better every quarter. Hierarchical architectures are getting more sophisticated. Humanoids are shipping.
 
 But nobody has a definitive answer on architecture yet. The embedding interface is our bet — not because it's obviously right, but because it asks the right question: what should the interface between understanding and action look like?
 
