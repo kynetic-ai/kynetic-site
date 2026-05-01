@@ -23,6 +23,10 @@ The question isn't *whether* to separate these levels. Most serious efforts do, 
 
 In our architecture, the answer has three pieces: a VLA that produces intent, a learned mapping that translates intent into skill embeddings, and a low-level controller that decodes those embeddings into action. The key insight lives in the middle — the embedding space itself.
 
+![3-Layer Architecture](/assets/images/diagrams/architecture-3layer.svg)
+
+*Figure 1: The 3-layer architecture. Everything above the dashed line is shared across embodiments — everything below is per-robot. The skill embedding space is the interface.*
+
 ## The Direct Approach
 
 Several well-funded efforts take a more direct path. Their high-level policy passes explicit commands to the low-level policy. "Move the end effector to position X with stiffness Y." Concrete, explicit, interpretable.
@@ -38,6 +42,10 @@ Instead of passing explicit commands between levels, we pass through a learned e
 This sounds abstract. Here's what it means in practice:
 
 The same embedding that corresponds to "reach toward object" compiles to different joint trajectories on a humanoid arm versus a 7-DOF manipulator versus a wheeled base with a gripper. Intent comes from the VLA — the embedding translates it into movement structure. Each low-level controller knows how to realize that structure on its hardware.
+
+![Embedding Interface Close-Up](/assets/images/diagrams/embedding-closeup.svg)
+
+*Figure 2: Inside the embedding space. Skills are regions in a shared latent manifold. The VLA selects a goal position (z_g → z_s), and each embodiment's decoder translates the same skill embedding into its own joint trajectories. Skills compose — walk + turn becomes a single blended movement.*
 
 ## Why This Matters
 
@@ -58,6 +66,10 @@ This is not a solved problem. Three things keep me up:
 **The sim-to-real gap for embeddings.** It's one thing to get this working in simulation, where you have perfect state and infinite data. It's another to deploy on real hardware where sensor noise, actuator latency, and unmodeled dynamics mean the embedding must be robust to distribution shift.
 
 **Evaluation.** How do you measure whether an embedding space is "good"? Reconstruction loss tells you something. Zero-shot transfer to a new embodiment tells you more. But the real test — does this embedding make it easier to learn new tasks? — is expensive and noisy.
+
+![Architecture Comparison](/assets/images/diagrams/architecture-comparison.svg)
+
+*Figure 3: Three approaches to robot learning architectures. The embedding interface is our bet — not because it's obviously right, but because learned composition across embodiments is the harder, more interesting problem.*
 
 ## The State of Play
 
