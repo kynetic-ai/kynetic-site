@@ -3,6 +3,7 @@ layout: post
 title: "The Embedding Interface"
 date: 2026-04-29 21:45:00 -0500
 categories: research
+published: false
 ---
 
 Everyone building robot foundation models is asking the same question: what's the right architecture?
