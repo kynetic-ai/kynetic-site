@@ -3,6 +3,7 @@ layout: post
 title: "One Brain. Any Robot."
 date: 2026-05-01 18:30:00 -0500
 categories: vision
+published: false
 ---
 
 ![One brain, connecting to multiple robot embodiments](/assets/images/blog/one_brain_any_robot.png)
