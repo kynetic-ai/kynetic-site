@@ -8,6 +8,7 @@ github_username: kynetic-ai
 theme: minima
 show_excerpts: true
 header_pages:
+  - blog.markdown
   - company.markdown
   - research.markdown
   - team.markdown
