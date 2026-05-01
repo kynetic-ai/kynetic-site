@@ -5,6 +5,8 @@ date: 2026-05-01 18:30:00 -0500
 categories: vision
 ---
 
+![One brain, connecting to multiple robot embodiments](/assets/images/blog/one_brain_any_robot.png)
+
 Four words. That's the whole ambition.
 
 **One brain. Any robot.**
@@ -21,11 +23,15 @@ Every time you build a embodiment-specific system, you solve the problem for tha
 
 One brain means data from a manipulator teaches a humanoid something useful. It means a skill learned in simulation deploys on hardware without retraining the whole stack. It means your investment in training compounds across every embodiment you add.
 
+![Knowledge transfer across robots: data from one enriches all](/assets/images/blog/knowledge_transfer.png)
+
 This is the economic argument. The scientific argument is simpler: intelligence that only works in one body isn't intelligence. It's a control policy. If we're serious about building systems that understand the physical world, they need to understand it in a way that's independent of any particular set of joints and actuators.
 
 ## Why Any Robot?
 
 Because the hard part of robotics isn't any specific robot. It's the interface between knowledge and understanding and action — between knowing what to do and knowing how to move.
+
+![The interface between knowledge and action — a luminous bridge between structured understanding and physical embodiment](/assets/images/blog/interface_knowledge_action.png)
 
 If you solve that interface, the embodiment becomes a detail. You train a low-level controller per platform — something that knows how a specific set of motors responds to commands — and you connect it to a shared high-level system that knows what to do in the world. The high-level system gets better with every robot you add. The low-level controllers stay cheap and specific.
 
