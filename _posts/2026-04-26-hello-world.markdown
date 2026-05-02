@@ -3,7 +3,10 @@ layout: post
 title: "Hello, Robot!"
 date: 2026-04-26 00:00:00 -0400
 categories: update
+published: false
 ---
+
+![Building robot systems](/assets/images/blog/building_robot_systems.png)
 
 Kynetic Intelligence exists. We're building robot learning systems.
 
